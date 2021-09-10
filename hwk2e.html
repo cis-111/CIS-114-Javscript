@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<!-- Lovingly designed by Renee Wendy especially for CIS 114 -->
+	<html lang="en">
+	<head>
+		<title>Renee Wendy Hollomon Portfolio JavaScript Ajax Homework 2a</title>
+		<meta name="description" content="Renee Wendy Hollomon Portfolio Programming JavaScript Ajax">
+		<meta name="keywords" content="Renee Wendy Hollomon Portfolio Programming Javascript Ajax HTML5 CSS">
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">		
+		<link rel="stylesheet" href="reset.css">
+		<link rel="stylesheet" href="styles.css">
+		<!-- script src=""></script -->
+	</head>
+	<body>
+
+		<nav class="navbar">	
+			<A href="index.html">INDEX</A>
+			<A href="hwk1.html">HWK1</A>
+			<A href="hwk2.html">HWK2</A>
+			<A href="hwk3.html">HWK3</A>
+			<A href="hwk4.html">HWK4</A>
+			<A href="hwk5.html">HWK5</A>
+			<A href="hwk6.html">HWK6</A>
+			<A href="hwk7.html">HWK7</A>
+			<A href="hwk8.html">HWK8</A>
+		</nav>
+
+		<header>
+			<h1>CIS 114 JS &amp; AJAX</h1>
+			<h2>Homework 2 - Basic Operations</h2>
+			<h3>Renee W Hollomon</h3>
+		</header>
+		
+		<section>
+
+			<nav class="navbar">	
+				<A>SUB-NAVIGATION --></A>
+				<A href="hwk2a.html">Hwk 2, p.1</A>
+				<A href="hwk2b.html">Hwk 2, p.2</A>
+				<A href="hwk2c.html">Hwk 2, Ex Credit</A>
+				<A href="hwk2d.html">Practices</A>				
+			</nav>
+			
+			<article>		
+
+				<h3>Exercise 2a: Prompt, Alert, If-Else</h3>
+				<p><a href="hwk2a.html">RUN: Page reloads to begin the sequence.</a><br>
+				There will be window prompts and alerts popping up!<br>
+					<a href="hwk2.html">Go Back to Homework 2 start page.</a></p>
+				<script>
+					//declare var
+					var num1, num2, num3, num4, n1, n2, n3, n4;
+					var countLow = 0; 
+					var countHigh = 4;
+					var result = "";
+					var multiply;
+					
+					num1 = window.prompt("Enter the first of four numbers.", "");
+					num2 = parseInt(window.prompt("Enter the second of four numbers.", ""));
+					num3 = window.prompt("Enter the third of four numbers.", "");
+					num4 = window.prompt("Enter the fourth of four numbers.", "");
+					
+					n1 = parseInt(num1);
+					n2 = parseInt(num2);
+					n3 = parseInt(num3);
+					n4 = parseInt(num4);
+					
+					if (isNaN(n1) || isNaN(n2) || isNaN(n3) || isNaN(n4)) {
+						window.alert("Please enter four numbers, not gibberish!  Reload page to try again.");
+					} else {
+					result = "The numbers entered are " + n1 + ", " + n2 + ", " + n3 + ", " + n4 + ".\n";
+						if (n1 < 6) {countLow++;}
+						if (n2 < 6) {countLow++;}
+						if (n3 < 6) {countLow++;}
+						if (n4 < 6) {countLow++;}
+						result = result + countLow + " number(s) are UNDER six.\n";
+						countHigh = countHigh - countLow;
+						result = result + countHigh + " number(s) are AT LEAST six.\n";
+						multiply = n1 * n2 * n3 * n4;
+						result = result + "Multiply them to get " + multiply + ".";
+						window.alert(result);
+					}					
+				</script>
+
+			</article>
+		</section>
+		
+		<script>
+			/* Performs simple arithmetic, a toy example. */
+			/* window.alert("aha lucky loading!"); */
+			function calc() {
+				/* declare const and var */
+				var num1 = 0;
+				var num1square = 0;
+				var num1cube = 0;
+				var resultMessage = "";
+				var errorMessage = "";
+				/* 3. script reads input. */
+				num1 = document.getElementById("num1").value;
+				/* 4. script tests number, and creates error message if needed. */
+				if ( isNaN(num1) ) {
+					/* 5. craft and deliver error message, reset form. */
+					errorMessage = "<span style='border: 2px solid black; padding: 6px; color: red; font-weight: bold;'>" + num1 + " is not a number, dear friend.</span>";
+					document.getElementById("calcError").innerHTML = errorMessage;
+					document.getElementById("calcResult").innerHTML = "";
+					document.getElementById("num1").value = "";
+					document.getElementById("num1").focus();
+				}
+				else {
+					/* 6. Calculate square and cube, return them, clear input. */
+					var num1parsed = parseInt(num1);
+					num1square = Math.pow(num1parsed, 2);
+					num1cube = Math.pow(num1parsed, 3	);
+					resultMessage = "You typed in " + num1parsed + ": squared = " + num1square + ", and cubed = " + num1cube + ".";
+					document.getElementById("calcResult").innerHTML = resultMessage;
+					document.getElementById("calcError").innerHTML = "";
+					document.getElementById("num1").value = "";
+					document.getElementById("num1").focus();
+				} 
+			}
+			function res() {
+				/* Reset button resets the form. */
+					document.getElementById("calcResult").innerHTML = "Result...";
+					document.getElementById("calcError").innerHTML = "";
+					document.getElementById("num1").value = "";
+					document.getElementById("num1").focus();
+				}
+		</script>
+				
+		<footer>
+			Copyright: 2021 by Renee Wendy
+			<br>License: CC BY-ND 2.0 'Use and Remix'
+			<br>
+			<a href="http://jigsaw.w3.org/css-validator/check/referer">
+    <img src="http://jigsaw.w3.org/css-validator/images/vcss-blue"
+        alt="Valid CSS Here!">
+    </a>
+		</footer>
+		
+		<nav>
+		</nav>
+
+	</body>
+	</html>

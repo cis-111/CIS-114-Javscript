@@ -1,0 +1,118 @@
+:root {
+  --backgroundcolor: #341880;
+		--backgroundnav: cornflowerblue;
+		--backgroundheader: lightblue;
+		--backgroundarticle: #d2e7ff;
+		--navcolor: white;
+		--navhovercolor: white;
+}
+
+body {
+	background-color: var(--backgroundcolor);
+	margin: 20px;
+}
+
+h1 {font-size: 2em; padding: 3px;}
+h2 {font-size: 1.6em; padding: 3px; font-family: sans-serif;}
+h3 {font-size: 1.3em; padding: 3px;}
+h4 {font-size: 1.1em; padding: 5px;}
+h5 {font-size: 0.9em; padding: 3px;}
+h6 {font-size: 0.7em; padding: 3px;}	
+
+p {
+padding: 10px;
+}
+.redtext {color:firebrick;}
+/* a {text-decoration: overline;} */
+span.code {font-family: monospace; letter-spacing: .2em;}input
+
+// not working? 
+// input:focus {background-color: yellow;}
+
+ol.custom-counter /* Custom bullets */ {
+	  counter-reset: section;
+}
+ol.custom-counter li::before {
+  counter-increment: section;
+ 	content: " " counter(section) " ";
+    display:inline-block;
+    background: white;
+    border: 3px solid #555;
+    padding:2px 12px;
+    margin-right:16px;
+    border-radius: 50%;
+}
+li { padding: 10px; }
+ul li {	
+	list-style-type: square; 
+    margin-left:23spx;
+}
+
+
+nav {
+	border: 15px solid var(--backgroundnav);
+	border-radius: 10px;
+	white-space: nowrap;
+	margin: auto;
+}
+.navbar {
+  overflow: hidden;
+  background-color: var(--backgroundcolor);
+/*  position: fixed; */
+  top: 0;
+
+	font-family: sans-serif;
+}
+.navbar a {
+  float: left;
+  display: block;
+  color: var(--navcolor);
+  text-align: center;
+  padding: 10px 16px;
+  text-decoration: none;
+  font-size: .7em;
+}
+.navbar a:hover {
+  background-color: var(--backgroundnav);
+  color: var(--navhovercolor);
+  padding: 6px 12px;
+  border: 4px solid var(--navhovercolor);
+		border-radius: 11px;
+/*  letter-spacing: .2em; */
+}
+
+header {
+	background-color: var(--backgroundheader);
+	text-align: center;
+	border: 5px solid var(--backgroundheader);
+	border-radius: 10px 10px 0px 0px;
+  padding: 36px;
+}
+
+section {
+	margin: auto;	
+	margin-bottom: 19px;
+}
+article {
+	margin: 0px;	
+	padding-left: 19px;
+	padding-right: 19px;	
+	padding-bottom: 19px;	
+	background-color: var(--backgroundarticle);
+	border: 5px solid var(--backgroundarticle);
+	border-bottom: 1px dashed black;
+}
+article:first-child {margin-top: 19px;}
+article:last-child {margin-bottom: 19px;}
+
+footer {
+	background-color: var(--backgroundheader);
+	border: 5px solid var(--backgroundheader);
+	border-radius: 0px 00px 10px 10px;
+	text-align: center;
+	font-size: .7em;
+}
+
+form {
+	text-align: center;
+}

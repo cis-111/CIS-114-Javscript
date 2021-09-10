@@ -1,0 +1,254 @@
+	<!DOCTYPE html>
+	<!-- Lovingly designed by Renee Wendy especially for CIS 114 -->
+		<html lang="en">
+		<head>
+			<title>Renee Wendy Hollomon Portfolio JavaScript Ajax Homework 2</title>
+			<meta name="description" content="Renee Wendy Hollomon Portfolio Programming JavaScript Ajax">
+			<meta name="keywords" content="Renee Wendy Hollomon Portfolio Programming Javascript Ajax HTML5 CSS">
+			<meta charset="UTF-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1">		
+			<link rel="stylesheet" href="reset.css">
+			<link rel="stylesheet" href="styles.css">
+			<!-- script src=""></script -->
+			<style>
+				input.formFocus:hover {
+					background-color: yellow;
+				}
+					input.formFocus:focus {
+					background-color: yellow;
+				}
+			</style>
+			
+		</head>
+		<body>
+
+			<nav class="navbar">	
+				<A href="index.html">INDEX</A>
+				<A href="hwk1.html">HWK1</A>
+				<A href="hwk2.html">HWK2</A>
+				<A href="hwk3.html">HWK3</A>
+				<A href="hwk4.html">HWK4</A>
+				<A href="hwk5.html">HWK5</A>
+				<A href="hwk6.html">HWK6</A>
+				<A href="hwk7.html">HWK7</A>
+				<A href="hwk8.html">HWK8</A>
+			</nav>
+
+			<header>
+				<h1>CIS 114 JS &amp; AJAX</h1>
+				<h2>Basic JavaScript Operations</h2>
+				<h3>Renee W Hollomon</h3>
+			</header>
+
+			<section>
+			<nav class="navbar">	
+				<A href="hwk2.html">Homework 2 MENU --></A>
+				<A href="hwk2a.html">H2 p.1</A>
+				<A href="hwk2b.html">H2 p.2</A>
+				<A href="hwk2c.html">H2 Extra</A>
+				<A href="hwk2d.html">H2 Practice</A>				
+			</nav>
+
+				<article>
+					<h3>Exercise 2x: Extra Credit, Currency Converter</h3>
+					
+					<form id="homeworkEC" name="homeworkEC">
+
+					<table style='border: 1px solid gray; padding: 4px;'>
+						<tr style='border: 1px solid gray; padding: 4px;'>
+							<td colspan="3" style='border: 1px solid gray; padding: 4px;'>
+								Monetary Exchange Rates<br>
+								July 2019 rates per US $
+							</td>
+						</tr>
+						<tr style='border: 1px solid gray; padding: 4px;'>
+							<td colspan="2" style='border: 1px solid gray; padding: 4px;'>
+									<label for='dollars'>Enter amount of US $</label></td>	
+							<td style='border: 1px solid gray; padding: 4px;'>
+								<input class='formFocus' type='number' min='0' step='0.01' id='dollars' placeholder='dollars' size='11'><br>
+							</td>
+						</tr>
+						<tr style='border: 1px solid gray; padding: 4px;'>
+							<td style='border: 1px solid gray; padding: 4px; text-align: left;'>
+								CURRENCY
+							</td>	
+							<td style='border: 1px solid gray; padding: 4px;'>
+								RATE
+							</td>	
+							<td style='border: 1px solid gray; padding: 4px;'>
+								VALUE
+							</td>	
+						</tr>
+						<tr style='border: 1px solid gray; padding: 4px;'>
+							<td style='border: 1px solid gray; padding: 4px; text-align: left;'>
+								EURO
+							</td>	
+							<td id='euro' style='border: 1px solid gray; padding: 4px;'>
+								0.89
+							</td>	
+							<td  id='euroExchange' style='border: 1px solid gray; padding: 4px;'>
+								.
+							</td>	
+						</tr>
+						<tr>
+							<td style='border: 1px solid gray; padding: 4px; text-align: left;'>
+								CANADA Dollar
+							</td>	
+							<td  id='canada' style='border: 1px solid gray; padding: 4px;'>
+								1.31
+							</td>	
+							<td  id='canadaExchange' style='border: 1px solid gray; padding: 4px;'>
+								.
+							</td>	
+						</tr>
+						<tr>
+							<td style='border: 1px solid gray; padding: 4px; text-align: left;'>
+								HONG KONG Dollar
+							</td>	
+							<td  id='hong' style='border: 1px solid gray; padding: 4px;'>
+								7.80
+							</td>	
+							<td  id='hongExchange' style='border: 1px solid gray; padding: 4px;'>
+								.
+							</td>	
+						</tr>
+						<tr>
+							<td style='border: 1px solid gray; padding: 4px; text-align: left;'>
+								JAPAN Yen
+							</td>	
+							<td id='yen' style='border: 1px solid gray; padding: 4px;'>
+								108.38
+							</td>	
+							<td id='yenExchange' style='border: 1px solid gray; padding: 4px;'>
+								.
+							</td>	
+						</tr>
+						<tr>
+							<td style='border: 1px solid gray; padding: 4px; text-align: left;'>
+								MEXICO Peso
+							</td>	
+							<td id='peso' style='border: 1px solid gray; padding: 4px;'>
+								19.11
+							</td>	
+							<td id="pesoExchange" style='border: 1px solid; padding: 4px;'>
+								.
+							</td>	
+						</tr>
+						<tr>
+							<td colspan=3 style="align-content: center;">	
+								<button type='submit' onclick='calc();  return(false)'>Calculate</button> &nbsp;
+								<button type='submit' onclick='res();  return(false)'>Reset</button>
+							</td>
+						</tr>
+					</table>
+				</form>
+					
+			 <script>
+					window.onload = function() {
+						document.getElementById("dollars").focus();
+					}
+					function calc() {
+						var dollars, exchangeRate, exchanageValue, temp;
+						dollars = parseFloat(document.getElementById("dollars").value);
+						console.log("dollars = " + dollars);
+						if (isNaN(dollars)) {dollars = 0;}
+// PESO ... 
+						exchangeRate = document.getElementById("peso").innerHTML;
+//	var obtained from .innerHTML CANNOT be converted by parseFloat 
+//	var obtained from .value CAN be converted by parseFloat 
+// investigate what type is returned from .innerHTML vs .value
+						temp = parseFloat(exchangeRate);
+						exchangeRate = temp;
+						console.log("exchangeRate = " + exchangeRate);
+						exchangeValue = dollars * exchangeRate;
+						exchangeValue = exchangeValue.toFixed(2);
+						console.log("exchangeValue = " + exchangeValue);
+						document.getElementById("pesoExchange").innerHTML = exchangeValue;
+// YEN 
+						exchangeRate = document.getElementById("yen").innerHTML;
+						temp = parseFloat(exchangeRate);
+						exchangeRate = temp;
+						console.log("exchangeRate = " + exchangeRate);
+						exchangeValue = dollars * exchangeRate;
+						exchangeValue = exchangeValue.toFixed(2);
+						console.log("exchangeValue = " + exchangeValue);
+						document.getElementById("yenExchange").innerHTML = exchangeValue;
+// EURO 
+						exchangeRate = document.getElementById("euro").innerHTML;
+						temp = parseFloat(exchangeRate);
+						exchangeRate = temp;
+						console.log("exchangeRate = " + exchangeRate);
+						exchangeValue = dollars * exchangeRate;
+						exchangeValue = exchangeValue.toFixed(2);
+						console.log("exchangeValue = " + exchangeValue);
+						document.getElementById("euroExchange").innerHTML = exchangeValue;
+// HONG 
+						exchangeRate = document.getElementById("hong").innerHTML;
+						temp = parseFloat(exchangeRate);
+						exchangeRate = temp;
+						console.log("exchangeRate = " + exchangeRate);
+						exchangeValue = dollars * exchangeRate;
+						exchangeValue = exchangeValue.toFixed(2);
+						console.log("exchangeValue = " + exchangeValue);
+						document.getElementById("hongExchange").innerHTML = exchangeValue;
+// CANADA 
+						exchangeRate = document.getElementById("canada").innerHTML;
+						temp = parseFloat(exchangeRate);
+						exchangeRate = temp;
+						console.log("exchangeRate = " + exchangeRate);
+						exchangeValue = dollars * exchangeRate;
+						exchangeValue = exchangeValue.toFixed(2);
+						console.log("exchangeValue = " + exchangeValue);
+						document.getElementById("canadaExchange").innerHTML = exchangeValue;
+					}
+					
+					function res() {
+console.log("reset");
+
+						document.getElementById("euroExchange").innerHTML = " ";
+						document.getElementById("canadaExchange").innerHTML = " ";
+						document.getElementById("hongExchange").innerHTML = " ";
+						document.getElementById("yenExchange").innerHTML = " ";
+						document.getElementById("pesoExchange").innerHTML = " ";
+						document.getElementById("dollars").value = "";
+					}
+    </script>
+
+					<ol class="custom-counter">
+						<li>Focus is on the input! Via javascript using a window.onload function.</li>
+						<li>With focus on input, press return to submit form.</li>
+						<li>Instructor requests the input field <u>yellow</u> upon user focus. (pseudoclass :focus) DONE!</li>
+						<li>Error check: if input is not a number, input set to zero.</li>
+						<li>Too tired tonight to wrap currency calculations in a loop, so lazy man code by cut'n'paste.</li>
+					</ol>
+					<p>Use the CSS pseudo-class :focus to the input box where the user will type the amount of dollar to be converted so when the user focus (enter with the mouse) that box, the background will be yellow.  <br>
+					<br>
+					Note:   that the above values for rates can be displayed as faded text within a grey box, by using the attribute of disabled in the form input statements. An alternative is to use the attribute of readonly, which will display the rates as normal text within a grey box. But the user should not be able to type anything in the Rate, neither the calculated Value columns. The only place the user can enter/type a value will be in the box beside the "Enter Amount of U.S. Dollars"!</p>
+
+				</article>
+			</section>
+
+			<section>
+			</section>
+
+			<section>
+				<article>
+				</article>
+			</section>
+
+
+			<footer>
+				Copyright: 2021 by Renee Wendy
+				<br>License: CC BY-ND 2.0 'Use and Remix'
+				<br>
+				<a href="http://jigsaw.w3.org/css-validator/check/referer">
+					<img src="http://jigsaw.w3.org/css-validator/images/vcss-blue"
+									alt="Valid CSS Here!">
+					</a>
+			</footer>
+
+			<nav>
+			</nav>
+
+		</body>
+		</html>

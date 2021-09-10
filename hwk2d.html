@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<!-- Lovingly designed by Renee Wendy especially for CIS 114 -->
+	<html lang="en">
+	<head>
+		<title>Renee Wendy Hollomon Portfolio JavaScript Ajax Homework 2</title>
+		<meta name="description" content="Renee Wendy Hollomon Portfolio Programming JavaScript Ajax">
+		<meta name="keywords" content="Renee Wendy Hollomon Portfolio Programming Javascript Ajax HTML5 CSS">
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">		
+		<link rel="stylesheet" href="reset.css">
+		<link rel="stylesheet" href="styles.css">
+		<!-- script src=""></script -->
+	</head>
+	<body>
+
+		<nav class="navbar">	
+			<A href="index.html">INDEX</A>
+			<A href="hwk1.html">HWK1</A>
+			<A href="hwk2.html">HWK2</A>
+			<A href="hwk3.html">HWK3</A>
+			<A href="hwk4.html">HWK4</A>
+			<A href="hwk5.html">HWK5</A>
+			<A href="hwk6.html">HWK6</A>
+			<A href="hwk7.html">HWK7</A>
+			<A href="hwk8.html">HWK8</A>
+		</nav>
+
+		<header>
+			<h1>CIS 114 JS &amp; AJAX</h1>
+			<h2>Basic JavaScript Operations</h2>
+			<h3>Renee W Hollomon</h3>
+		</header>
+
+		<section>
+			<nav class="navbar">	
+				<A href="hwk2.html">Homework 2 MENU --></A>
+				<A href="hwk2a.html">H2 p.1</A>
+				<A href="hwk2b.html">H2 p.2</A>
+				<A href="hwk2c.html">H2 Extra</A>
+				<A href="hwk2d.html">H2 Practice</A>				
+			</nav>
+			
+			<article>
+				<h3>Exercise 2a: Prompt, Alert, If-Else</h3>
+				<p><a href="hwk2e.html">RUN: New page loads.</a><br>
+					There will be window alerts and prompts.<br>
+		</article>
+		</section>
+
+		<section>
+		<article>		
+				<h3>Exercise 1b: document.write</h3>
+				<script>
+					
+					document.write("<form name='myHarrowingForm'>");	
+					
+					document.write("<table style='border: 1px solid gray; padding: 4px;'>");
+
+					document.write("<tr style='border: 1px solid gray; padding: 4px;'>");					
+					document.write("<td style='border: 1px solid gray; padding: 4px; font-weight: bolder;' colspan='4'>Bonanza Boner Co Unlimited Esq.</td>");
+					document.write("<tr>");
+					
+					document.write("<tr style='border: 1px solid gray; padding: 4px;'>");					
+					document.write("<th style='border: 1px solid gray; padding: 4px;'>Employee Handle</th>");
+					document.write("<th style='border: 1px solid gray; padding: 4px;'>Yearly Moola</th>");
+					document.write("<th style='border: 1px solid gray; padding: 4px;'>+ $100 Bonus</th>");
+					document.write("<th style='border: 1px solid gray; padding: 4px;'>After 22% Tax</th>");
+					document.write("</tr>");
+					
+					document.write("<tr style='border: 1px solid gray; padding: 4px;'>");					
+					document.write("<th style='border: 1px solid gray; padding: 4px;'><input type='text' value='Employed One'></th>");
+					document.write("<th style='border: 1px solid gray; padding: 4px;'><input type='text' autofocus name='salary1' class='r'></th>");
+					document.write("<th style='border: 1px solid gray; padding: 4px;'><input type='text'  name='bonus1' disabled class='r'></th>");		
+					document.write("<th style='border: 1px solid gray; padding: 4px;'><input type='text'  name='total1' disabled class='r'></th>");		
+					document.write("</tr>");
+					
+					document.write("<tr style='border: 1px solid gray; padding: 4px;'>");					
+					document.write("<th style='border: 1px solid gray; padding: 4px;'><input type='text' value='Employed Tooth'></th>");
+					document.write("<th style='border: 1px solid gray; padding: 4px;'><input type='text'  name='salary2' class='r'></th>");
+					document.write("<th style='border: 1px solid gray; padding: 4px;'><input type='text'  name='bonus2' disabled class='r'></th>");
+					document.write("<th style='border: 1px solid gray; padding: 4px;'><input type='text'  name='total2' disabled class='r'></th>");		
+					document.write("</tr>");
+					
+					document.write("<tr style='border: 1px solid gray; padding: 4px;'>");					
+					document.write("<th style='border: 1px solid gray; padding: 4px;'><input type='text' value='Employee Tree'></th>");
+					document.write("<th style='border: 1px solid gray; padding: 4px;'><input type='text'  name='salary3' class='r'></th>");
+					document.write("<th style='border: 1px solid gray; padding: 4px;'><input type='text'  name='bonus3' disabled class='r'></th>");		
+					document.write("<th style='border: 1px solid gray; padding: 4px;'><input type='text'  name='total3' disabled class='r'></th>");		
+					document.write("</tr>");
+					
+					document.write("<tr style='border: 1px solid gray; padding: 4px;'>");					
+					document.write("<th style='border: 1px solid gray; padding: 4px;'><input type='text' value='Employed Fourier'>	</th>");
+					document.write("<th style='border: 1px solid gray; padding: 4px;'><input type='text'  name='salary4' class='r'></th>");		
+					document.write("<th style='border: 1px solid gray; padding: 4px;'><input type='text'  name='bonus4' disabled class='r'></th>");		
+					document.write("<th style='border: 1px solid gray; padding: 4px;'><input type='text'  name='total4' disabled class='r'></th>");		
+					document.write("</tr>");
+					
+					document.write("<tr style='border: 1px solid gray; padding: 4px;'>");					
+					document.write("<th style='border: 1px solid gray; padding: 4px;'>Totals</th>");
+					document.write("<th style='border: 1px solid gray; padding: 4px;'><input type='text'  name='totalMoola' disabled class='r' value='totalMoola'></th>");
+					document.write("<th style='border: 1px solid gray; padding: 4px;'><input type='text'  name='totalBonus' disabled class='r' value='totalBonus'></th>");
+					document.write("<th style='border: 1px solid gray; padding: 4px;'></th>");
+					document.write("</tr>");
+					document.write("</table>");
+					
+					document.write("<input type='button' value='Calculate' onclick='process()' return(false)>");
+
+					document.write("<input type='reset' value='Reset' size='10'>");
+					
+function process() {
+		salary1 = parseFloat(document.forms["myHarrowingForm"].elements["salary1"].value);
+  salary2 = parseFloat(document.forms["myHarrowingForm"].elements["salary2"].value);
+  salary3 = parseFloat(document.forms["myHarrowingForm"].elements["salary3"].value);
+  salary4 = parseFloat(document.forms["myHarrowingForm"].elements["salary4"].value);
+
+        //add 100 bonus to each salary
+        sb1 = salary1 + 100;
+        sb2 = salary2 + 100;
+        sb3 = salary3 + 100;
+        sb4 = salary4 + 100;	
+        //calculate total annual salaries and total bonuses for all employees
+        totalMoola = salary1 + salary2 + salary3 + salary4;
+        totalBonus = sb1 + sb2 + sb3 + sb4;
+
+  document.forms["myHarrowingForm"].elements["bonus1"].value = sb1.toFixed(2);
+  document.forms["myHarrowingForm"].elements["bonus2"].value = sb2	.toFixed(2);
+  document.forms["myHarrowingForm"].elements["bonus3"].value = sb3.toFixed(2);
+  document.forms["myHarrowingForm"].elements["bonus4"].value = sb4.toFixed(2);
+
+  document.forms["myHarrowingForm"].elements["totalMoola"].value = totalMoola.toFixed(2);
+  document.forms["myHarrowingForm"].elements["totalBonus"].value = totalBonus.toFixed(2);
+
+	// estimate employee salaraies after 22pct tax bite...
+sb1 = 0.78 * sb1;
+sb2 = 0.78 * sb2;
+sb3 = 0.78 * sb3;
+sb4 = 0.78 * sb4;
+	
+  document.forms["myHarrowingForm"].elements["total1"].value = sb1.toFixed(2);
+  document.forms["myHarrowingForm"].elements["total2"].value = sb2.toFixed(2);
+  document.forms["myHarrowingForm"].elements["total3"].value = sb3.toFixed(2);
+  document.forms["myHarrowingForm"].elements["total4"].value = sb4.toFixed(2);
+
+}
+				
+				</script>
+			</article>
+		</section>
+		
+		<section>
+			<article>
+				<h3>Exercise 1a: document.write</h3>
+				<script>
+					document.write("<p style='color: orange; font-style: italic;'>");
+					document.write("A, ");
+					document.write("B, ");
+					document.write("C ");
+					document.write("</p>");
+				</script>
+			</article>
+		</section>
+				
+
+		<section>
+			<article>
+				<h2>Function assignments.</h2>
+
+				<h3>TODO In Plain English</h3>
+
+				<ol class="custom-counter">
+					<li>Render form with focus on number input field.  Usually one would limit the input type to numbers, but in this homework I will NOT do that, so that error checking can be tested.</li>
+					<li>Click 'submit' button to start a JS function.</li>
+					<li>JS function retrieves the form's number input.</li>
+					<li>JS function tests: is input a number? BOOLEAN.</li>
+					<li>BOOLEAN FALSE: Prepare error message, write to <strong>error area</strong>, clear input <u>and nothing else</u>.</li>
+					<li>BOOLEAN TRUE: function calculates number's square and cube, and prepares a message to be written in the <strong>result area</strong>. Usually I would combine the error and result areas, but in this homework I will NOT do that as the teacher prefers here.</li>
+					<li>Reset button clears the result area, error area, input field, and puts the cursor back in the input field, ready to go!		
+					</li>
+				</ol>
+			</article>
+		</section>
+		
+					
+		<footer>
+			Copyright: 2021 by Renee Wendy
+			<br>License: CC BY-ND 2.0 'Use and Remix'
+			<br>
+			<a href="http://jigsaw.w3.org/css-validator/check/referer">
+    <img src="http://jigsaw.w3.org/css-validator/images/vcss-blue"
+        alt="Valid CSS Here!">
+    </a>
+		</footer>
+		
+		<nav>
+		</nav>
+
+	</body>
+	</html>
